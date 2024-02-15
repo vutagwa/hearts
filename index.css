@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(#550101, #050505);
+}
+.container{
+    position: relative;
+    height: 430px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rba(255 255 255 0.05);
+}
+.heart{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+}
+.heart::before{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    background: #d43358;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+    rotate: 315deg;
+}
