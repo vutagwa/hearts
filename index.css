@@ -17,6 +17,7 @@ body{
     display: flex;
     justify-content: center;
     border-bottom: 1px solid rba(255 255 255 0.05);
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,transparent, #0005);
 }
 .heart{
     position: absolute;
@@ -28,8 +29,36 @@ body{
     position: absolute;
     width: 200px;
     height: 300px;
+    top: -100px;
+    left: 25px;
     background: #d43358;
     border-top-right-radius: 100px;
     border-top-left-radius: 100px;
     rotate: 315deg;
+    z-index: 1000;
+    animation: animateheart 2s steps(1) infinite;
+}
+.heart::after{
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    top: -100px;
+    left: 95px;
+    background: #d43358;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+    rotate: 45deg;
+    z-index: 1000;
+    animation: animateHeart 2s steps(1) infinite;
+}
+@keyframes animateHeart {
+    0%,94%,100%
+    {
+        filter: none;
+    }
+    95%{
+        filter: drop-shadow(0, 0 50px, rgb(196, 53, 53) drop-shadow(0, 0 150px, rgb(196, 53, 53)));
+        background: rgb(233, 86, 86);
+    }
 }
